@@ -1,0 +1,32 @@
+{
+  "name": "player",
+  "version": "4.0.0",
+  "description": "Audio streaming software system",
+  "main": "machine.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "audio",
+    "streaming",
+    "bluetooth",
+    "airplay",
+    "upnp",
+    "spotify",
+    "mpd"
+  ],
+  "author": "retro audio designs",
+  "license": "GNU General Public License v3.0",
+  "dependencies": {
+    "album-art": "^1.0.4",
+    "express": "^4.17.2",
+    "node-pty": "^0.10.1",
+    "node-watch": "^0.7.3",
+    "notyf": "^3.10.0",
+    "socket.io": "^4.4.1",
+    "usb-detection": "^4.14.1"
+  }
+}

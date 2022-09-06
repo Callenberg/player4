@@ -1,0 +1,17 @@
+[Unit]
+Description=Player machine
+After=multi-user.target			
+#Requires=network.target
+#Wants=bluetooth.service mpd.service
+
+[Service]
+#Type=idle				
+ExecStart=/bin/bash /player/player.sh
+ExecStop=/bin/bash /player/stopplayer.sh
+
+User=root
+Restart=on-failure			
+RestartSec=60				
+
+[Install]
+WantedBy=multi-user.target
