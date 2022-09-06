@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- *********************************************************************** -->
+<!-- Copyright 2022 by Retro Audiophile Designs GNU General Public License v3.0 -->
+<!-- *********************************************************************** -->
+<head>
+  <title>Player</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="application-name" content="player">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-startup-image" href="/apple-touch-icon.png">
+  <!--Versions: Bootstrap 4.3.1; nouislider - 14.1.1; Fontawesome 5.12.0 -->
+<link href="bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="nouislider.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="notyf.min.css">
+<link href="all.min.css" type="text/css" rel="stylesheet">
+<link href="player.css" type="text/css" rel="stylesheet">
+</head>
+<body class="bg">
+<!-- player grid starts =====================================================-->
+<!-- Container; holds player page grid (3 columns & 2 fixed rows, flex rows);-->
+<div class="container center-container bg-inner pt-1 pb-4">
+<!-- player header, header row - only shown on wide screens -->
+<header>
+<div class="row">
+  <!-- responsive column left -->
+  <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+  </div>
+      <div class="col " >
+        <h3 class="player-headline ">Player</h3>
+      </div>
+      <div class="col d-flex justify-content-end align-top pt-1 pr-3">
+        <button class="playback-btn" type="button" onclick="window.location.href = 'player.html';">
+          <i class="home-btn fas fa-redo fa-2x" href="player.html" title="Reload Page"></i>
+        </button>
+      </div>
+      <!-- responsive column right -->
+  <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+  </div>
+</header>
+<!-- Main row with responsive columns to the left/right -->
+  <div class="row">
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div>
+<!-- Start of: centre column of Player -->
+    <div class="col">
+<!-- Player status frame ====================================================-->
+      <div class="col pl-0 mx-0 my-0">
+        <p class="settings-text mx-0 my-0"> Status:</p>
+      </div>
+      <ul id="player-status" class="list-group no-bullet">
+        <li id="idle-status" class="list-group-item d-flex justify-content-between align-items-center player-list">
+        <div class="col pl-0">
+          <p class="settings-text py-2"></p>
+        </div> </li>
+      </ul>
+<!-- volume symbols =========================================================-->
+              <p class="settings-text mt-2 mb-1 pb-0">
+                Volume control:</p>
+              <div class="d-flex justify-content-center">
+                <div class="col d-flex justify-content-start ml-n3">
+                  <i id="vol-down-symbol" class="vol-down fas fa-volume-down fa-1x"></i>
+                </div>
+                <div class="col d-flex justify-content-end mr-n3">
+                  <i id="vol-up-symbol" class="vol-up fas fa-volume-up fa-1x"></i>
+                </div>
+              </div>
+<!-- volume slider place holder-->
+              <div class="pt-1 pb-4">
+                <div id="volume-slider" title="Volume">
+                </div>
+              </div>
+<!-- First row of navbar with buttons to bluetooth and wi-fi =======================-->
+        <p class="settings-text pb-0 my-0">
+                Main controls:</p>
+        <ol id="upper-nav-bar" class="nav nav-justified bg-dark pb-1">
+            <!-- Bluetooth button-->
+            <li class="nav-item border border-secondary">
+              <a class="nav-link" href="playerbluetooth.html">
+                <i class="playlist-btn fab fa-bluetooth-b fa-5x" title="Bluetooth"></i>
+              </a>
+            </li>
+            <!-- Wi-Fi button -->
+            <li class="nav-item border border-secondary ml-1">
+              <a class="nav-link" href="playerwifi.html">
+                <i class="playlist-btn fas fa-wifi fa-5x" title="Wi-Fi"></i>
+              </a>
+            </li>
+        </ol>
+<!-- Second row of navbar with buttons to playback and settings ====================-->
+        <ol id="lower-nav-bar" class="nav nav-justified bg-dark mb-4">
+            <!-- USB Playback button-->
+            <li class="nav-item border border-secondary">
+              <a class="nav-link" href="playerplayback.html">
+                <i class="playlist-btn fab fa-usb fa-5x" title="USB Playback"></i>
+              </a>
+            </li>
+            <!-- Settings -->
+            <li class="nav-item border border-secondary ml-1">
+              <a class="nav-link" href="playersettings.html">
+                <i class="playlist-btn fas fa-cog fa-5x" title="Settings"></i>
+              </a>
+            </li>
+        </ol>
+<!-- List of information frames =============================================-->
+        <ul id="bluetooth-list" class="list-group no-bullet mb-2">
+
+        </ul>
+        <ul id="connection-list" class="list-group no-bullet">
+
+        </ul>
+    </div> <!-- ends the main centre column -->
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div> <!-- end right side responsive column of main row -->
+  </div> <!-- ends the main row =============================================-->
+</div> <!-- player grid ends,  ends container -->
+<!-- load the Javascripts -->
+   <script  src="jquery-3.3.1.slim.min.js"></script>
+   <script  src="socket.io.js"></script>
+   <script  src="popper.min.js"></script>
+   <script src="notyf.min.js"></script>
+   <script  src="bootstrap.min.js"></script>
+   <script  src="nouislider.min.js"></script>
+   <script  src="player.js"></script>
+</body>
+</html>

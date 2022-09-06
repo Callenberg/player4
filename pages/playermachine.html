@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- *********************************************************************** -->
+<!-- Copyright 2022 by Retro Audiophile Designs GNU General Public License v3.0 -->
+<!-- *********************************************************************** -->
+<head>
+  <title>machine internals</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+ <meta name="application-name" content="player">
+ <meta name="msapplication-TileColor" content="#da532c">
+ <meta name="theme-color" content="#ffffff">
+  <!--Versions: Bootstrap 4.3.1; Fontawesome 5.12.0 -->
+<link href="bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="all.min.css" type="text/css" rel="stylesheet"> <!--load all fontawesome fonts and styles -->
+<link rel="stylesheet" href="notyf.min.css">
+<link href="player.css" type="text/css" rel="stylesheet">
+</head>
+<body class="bg">
+<!-- Container; holds playlist grid (3 columns & 2 fixed rows); -->
+<div class="container bg-darker-inner pt-2 vh-100"> <!-- vh-100 viewport height 100%-->
+<!-- Header part uses most of the stylings of the usb-list page-->
+<header>
+  <div class="row mb-1">
+    <!-- responsive column left   no more-->
+
+      <div class="col usblist-header-border pl-1 py-1">
+        <a  href="playermachine.html" title="Update System State">
+        <i class="settings-symbol far fa-eye fa-3x"></i>
+      </a>
+      </div>
+      <div class="col usblist-header-border text-center usblist-headline pt-2">
+        <h3><strong>machine internals</strong></h3>
+      </div>
+      <div class="col usblist-header-border d-flex justify-content-end align-top pt-1 pr-2">
+        <button class="playback-btn" type="button" onclick="window.location.href = 'player.html';">
+          <i class="home-btn fas fa-home fa-2x" href="player.html" title="Player"></i>
+        </button>
+      </div>
+      <!-- responsive column right  no more-->
+
+  </div>
+</header>
+    <!-- Connections =======================================    -->
+    <div class="row">
+      <!-- Responsive column left -->
+
+      <!-- Center column for connections -->
+      <div class="col">
+        <!-- Internal machine data -->
+      <ul id="machine" class="list-group no-bullet">
+        </ul>
+      <!-- Bluetooth information -->
+      <ul id="bluetooth" class="list-group no-bullet mt-2">
+      </ul>
+  </div>
+    <!-- Responsive column right -->
+
+  </div>
+  </div>
+
+<!-- load the Javascripts -->
+   <script type="text/javascript" src="jquery-3.3.1.slim.min.js"></script>
+   <script type="text/javascript" src="popper.min.js"></script>
+   <script src="socket.io.js"></script>
+   <script src="notyf.min.js"></script>
+   <script type="text/javascript" src="bootstrap.min.js"></script>
+   <script type="text/javascript" src="playermachine.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- *********************************************************************** -->
+<!-- Copyright 2022 by Retro Audiophile Designs GNU General Public License v3.0 -->
+<!-- *********************************************************************** -->
+<head>
+  <title>Player Settings</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+ <meta name="application-name" content="player">
+ <meta name="msapplication-TileColor" content="#da532c">
+ <meta name="theme-color" content="#ffffff">
+  <!--Versions: Bootstrap 4.3.1; Fontawesome 5.12.0 -->
+<link href="bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="all.min.css" type="text/css" rel="stylesheet"> <!--load all fontawesome fonts and styles -->
+<link rel="stylesheet" href="notyf.min.css">
+<link href="player.css" type="text/css" rel="stylesheet">
+</head>
+<body class="bg">
+<!-- Container; holds playlist grid (3 columns & 2 fixed rows); -->
+<div class="container bg-darker-inner pt-2 vh-100"> <!-- vh-100 viewport height 100%-->
+<!-- Header part uses most of the stylings of the usb-list page-->
+<header>
+  <div class="row mb-1">
+    <!-- responsive column left -->
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div>
+      <div class="col usblist-header-border pl-1 py-1">
+        <a  href="playersettings.html" title="Update Settings Page">
+        <i class="settings-symbol fas fa-cog fa-3x"></i>
+      </a>
+      </div>
+      <div class="col usblist-header-border text-center usblist-headline pt-2">
+        <h3><strong>Settings</strong></h3>
+      </div>
+      <div class="col usblist-header-border d-flex justify-content-end align-top pt-1 pr-2">
+        <button class="playback-btn" type="button" onclick="window.location.href = 'player.html';">
+          <i class="home-btn fas fa-home fa-2x" href="player.html" title="USB Playback Page"></i>
+        </button>
+      </div>
+      <!-- responsive column right -->
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+  </div>
+</header>
+    <!-- Connections =======================================    -->
+    <div class="row">
+      <!-- Responsive column left -->
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+      <!-- Center column for connections -->
+      <div class="col">
+      <!-- fixed; volume setting at start-up -->
+      <ul id="volume-frame" class="list-group bg-darkest-inner mt-3">
+        <li class="list-group-item d-flex justify-content-between align-items-center player-list">
+            <div class="col-auto">
+              <i class="volume-symbol fas fa-volume-down fa-2x pl-2 my-2"></i>
+            </div>
+            <div class="col pl-0">
+              <div id="volume-menu" class="dropdown my-2">
+                <button class="btn set-volume-btn dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Set Start-up Volume
+                </button>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left bg-lighter border border-dark" aria-labelledby="dropdownMenuButton">
+                    <a id="vol0" class="dropdown-item text-center" href="#" data-volume="0"> &nbsp;  &nbsp; 0%</a>
+                    <a id="vol10" class="dropdown-item text-center" href="#" data-volume="10"> &nbsp; 10%</a>
+                    <a id="vol20" class="dropdown-item text-center" href="#" data-volume="20"> &nbsp; 20%</a>
+                    <a id="vol30" class="dropdown-item text-center" href="#" data-volume="30"> &nbsp; 30%</a>
+                    <a id="vol40" class="dropdown-item text-center" href="#" data-volume="40"> &nbsp; 40%</a>
+                    <a id="vol50" class="dropdown-item text-center" href="#" data-volume="50"> &nbsp; 50%</a>
+                    <a id="vol60" class="dropdown-item text-center" href="#" data-volume="60"> &nbsp; 60%</a>
+                    <a id="vol70" class="dropdown-item text-center" href="#" data-volume="70"> &nbsp; 70%</a>
+                    <a id="vol80" class="dropdown-item text-center" href="#" data-volume="80"> &nbsp; 80%</a>
+                    <a id="vol90" class="dropdown-item text-center" href="#" data-volume="90" > &nbsp; 90%</a>
+                    <a id="vol100" class="dropdown-item text-center" href="#" data-volume="100">100%</a>
+                  </div>
+                </div>
+            </div>
+        </li>
+      </ul>
+        <!-- fixed; status of Internet access -->
+      <ul id="connection-list" class="list-group no-bullet mt-3">
+
+        <!-- status is injected here by playersetiings.js -->
+
+    </ul>
+      <!-- fixed; restart options -->
+      <div id="system-text" class="col settings-border bg-darkest-inner mt-4">
+        <p class="settings-text m-0">Player system restart options:</p>
+          <p class="settings-text-small m-0 pb-2">&nbsp; 1. Restart Spotify, Airplay, Bluetooth, UPnP<br>&nbsp; &nbsp; &nbsp; [Stops all streaming]
+          <br>&nbsp; 2. Restart Player Software - reset <br>&nbsp; &nbsp; &nbsp; [Disconnects your device temporarily]</p>
+      </div>
+      <ul id="restart-list" class="list-group no-bullet bg-darkest-inner mb-3">
+
+        <li id="stream" class="list-group-item d-flex justify-content-between align-items-center player-list">
+          <div class="col-auto">
+            <i class="systemsymbol fas fa-cloud-upload-alt fa-2x pl-0 pr-0 my-2"></i>
+          </div>
+          <div id="restart-streaming" class="col my-2 ml-0 pl-1">
+              <button type="button" class="btn usb-root-btn" title="Restart Streaming Services">
+                1. Restart Streaming
+              </button>
+          </div>
+        </li>
+        <li id="boot" class="list-group-item d-flex justify-content-between align-items-center player-list mt-n1">
+          <div class="col-auto">
+            <i class="systemsymbol fas fa-hdd fa-2x pl-0 pr-1 my-2"></i>
+          </div>
+          <div id="reboot" class="col my-2 ml-0 pl-1">
+              <button type="button" class="btn usb-root-btn" title="Restart Player">
+                2. Restart Player
+              </button>
+          </div>
+        </li>
+    </ul>
+  </div>
+    <!-- Responsive column right -->
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div>
+  </div> <!-- Ends Row element-->
+  <!-- fixed bottom nav bar - this is outside of row element -->
+      <div id ="nav-bar" class="bottom-btn fixed-bottom pb-1">
+        <ol class="nav nav-justified bg-dark  ">
+          <!-- Bluetooth -->
+          <li class="nav-item border border-secondary px-2 py-1 mr-1">
+              <a class="nav-link" href="playerbluetooth.html">
+                  <i class="usb-btn fab fa-bluetooth-b fa-2x" title="Bluetooth"></i>
+                  </a>
+          </li>
+          <!-- Wi-Fi -->
+          <li class="nav-item border border-secondary p-1 mr-1">
+              <a class="nav-link" href="playerwifi.html">
+                  <i class="usb-btn fas fa-wifi fa-2x" title="Wi-Fi"></i>
+                  </a>
+          </li>
+          <!-- USB playback -->
+          <li class="nav-item border border-secondary p-1 mx-1">
+              <a class="nav-link" href="playerplayback.html">
+                  <i class="usb-btn fab fa-usb fa-2x" title="USB Playback"></i>
+                  </a>
+          </li>
+        </ol>
+      </div> <!-- ends fixed bottom nav bar -->
+</div>   <!-- Ends Container element-->
+
+<!-- load the Javascripts -->
+   <script type="text/javascript" src="jquery-3.3.1.slim.min.js"></script>
+   <script type="text/javascript" src="popper.min.js"></script>
+   <script src="socket.io.js"></script>
+   <script src="notyf.min.js"></script>
+   <script type="text/javascript" src="bootstrap.min.js"></script>
+   <script type="text/javascript" src="playersettings.js"></script>
+
+</body>
+</html>

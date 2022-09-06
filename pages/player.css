@@ -1,0 +1,386 @@
+:root {
+  --player-orange: #AF5828;
+  --player-grey: #373D45;
+  --player-red: #4C1C1A;
+  --player-green: #32735F; /*original: #1B3E33  lighter: #32735F*/
+  --player-blue: #5578A0; /* Original #3C6F92*/
+  --player-black: #000000;
+  --player-light-grey: #73777C; /* a lighter shade of the grey */
+  --player-dark: #212529;       /* dark and blackish . . . */
+  --player-text-dark: #536571; /*from Bootstrap */
+  --player-dark-background: #343A40; /*from Bootstrap */
+  /* Use for example:     var(--player-orange) */
+}
+/*++++++++++++++ Copyright Retro Audiophile Designs 2022 ++++++++++++++++++ */
+/*GNU General Public License v3.0 see license.txt            [Source code]  */
+/* All colours are derived from the background */
+/* Backgrounds */
+.bg {
+ /* The background image used is the Modernistic Harbour by Ingemar Callenberg*/
+ background-image: url("Harbour_Modernistic_full_size.jpg");
+ height: 100%; /* Full height required */
+ /* Center and scale the image nicely */
+ background-position: center center;
+ background-attachment: fixed;
+ /*background-repeat: repeat repeat;*/
+ background-size: cover;
+ /* add class="bg" like this <body class="bg"> */
+}
+.bg-inner {
+ /*Makes the background image less transparent in the center (48)*/
+ background-color: rgba(55, 61, 69, 0.73); /* player grey */
+}
+.bg-darker-inner {
+ /*Makes the background image even less transparent in the center (61)*/
+ background-color: rgba(55, 61, 69, 0.85); /* player grey */
+}
+.bg-darkest-inner {
+ /*Makes the background image hardly transparent in the center (73)*/
+ background-color: rgba(55, 61, 69, 0.95); /* player grey */
+}
+.bg-lighter {
+  /*Solid, used for pop-ups */
+  background-color: var(--player-light-grey);
+}
+.bg-orange {
+  /*Solid, used for pop-ups */
+  background-color: var(--player-orange);
+}
+
+/* Testing of layout - to be removed . . . */
+.colx, .col-autox {
+ border:1px solid var(--player-red); /* for aligning purposes; remove x*/
+}
+.rowx, .containerx {
+  border:1px solid var(--player-blue); /* for aligning purposes; remove x*/
+}
+/* Styling buttons and symbols and text*/
+/*----------------------------------------------------------------------------*/
+button { /* Get rid of the blue "click" border in Bootstrap */
+    outline-style: none !important;
+}
+ul.no-bullet {
+  list-style-type: none !important;
+}
+.active {
+  background-color: var(--player-orange) !important;
+}
+.rev-btn, .play-pause-btn, .fwd-btn, .usb-btn,
+.playlist-btn, .settings-btn,
+.home-btn, .loading-symbol{
+  color: var(--player-orange);
+}
+
+.shuffle-btn, .repeat-btn, .no-wifi, .nobluetooth, .nolan, .nohotspot {
+  color: var(--player-dark);
+}
+.symbol-on {
+  color: var(--player-green);
+}
+.symbol-off {
+  color: var(--player-red);
+}
+.shuffle-btn, .repeat-btn {
+  font-size: 1.5rem; /* the playback state buttons must be smaller */
+}
+.shuffle-btn-on, .repeat-btn-on {
+  color: var(--player-orange);
+  font-size: 1.5rem; /* the playback state buttons must be smaller */
+}
+.vol-down, .vol-up, .lan-symbol, .wifi-symbol, .volume-symbol,
+.systemsymbol, .bluetooth-symbol{
+  color: var(--player-light-grey);
+}
+/* Found the svg colouring trick in this link: (below last one)
+https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
+AirPlay icon was not a part of fontawsome, downloaded from:
+https://upload.wikimedia.org/wikipedia/commons/6/64/AirPlay_Audio_logo.svg
+*/
+.airplay-symbol {
+  height: 1.6rem;
+  width: 1.6rem;
+  mask: url(/airplay-audio.svg); /* path to your image */
+  -webkit-mask: url(/airplay-audio.svg) no-repeat center;
+}
+.playback-btn, .list-remove-btn, .list-remove-phone-btn, .sourcedevice-btn {
+  background-color: transparent;
+  border: none; /* Remove borders */
+  color: unset;
+  padding: unset;
+  font-size: unset;
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 10%;
+}
+.playback-btn:active, .list-btn:active, .list-remove-btn:active, .list-remove-phone-btn:active, .sourcedevice-btn:active {
+  background-color: var(--player-light-grey);
+  -webkit-box-shadow: 2px 2px 0px 0px var(--player-grey); /* Safari */
+  box-shadow: 2px 2px 0px 0px var(--player-grey);
+  opacity: 0.4;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+/* text oriented styling*/
+.playback-text {
+  color: var(--player-dark-text);
+}
+.time-text {
+  font-size: 0.75em;
+}
+/* Specific styling for list pages (playlist, USB and settings)-------------- */
+.player-list, .end-element { /*general list element styling*/
+  border: 1px solid var(--player-orange);
+  background-color: rgba(55, 61, 69, 0.75); /* player grey */
+  margin: 0px;
+  padding: 0px;
+}
+.scan-list {    /*this one has a button function, clickable */
+  background-color: var(--player-orange);
+  border: none;
+}
+/* doesn't work
+.scan-list:active{
+  background-color: var(--player-light-grey);
+  -webkit-box-shadow: 2px 2px 0px 0px var(--player-grey);
+  box-shadow: 2px 2px 0px 0px var(--player-grey);
+  opacity: 0.4;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: none;
+}*/
+.scan-btn {
+  border: none;
+}
+
+.folder-list{ /*used in USB for folders*/
+  border: 1px solid var(--player-orange);
+  /*background-color: rgba(55, 61, 69, 0.95); /* player grey */
+  background-color: var(--player-dark-background);
+  margin: 0px;
+  padding: 0px;
+}
+.error-list { /*list element for errors*/
+  border: 1px solid var(--player-red);
+  background-color: rgba(55, 61, 69, 0.75); /* player grey */
+  margin: 0px;
+  padding: 0px;
+}
+.speaker-list { /*list element for found speakers after scan*/
+  border: 2px solid var(--player-red);
+  background-color: rgba(55, 61, 69, 0.75); /* player grey */
+  margin: 0px;
+  padding: 0px;
+}
+.settings-text, .disconnect-text { /* Information text used as section title */
+  color: var(--player-light-grey);
+  line-height: 1.2;
+}
+.disconnect-text {
+  text-align: center;
+}
+.settings-text-small { /* Information text used in paragraphs*/
+  color: var(--player-light-grey);
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+.settings-text-small-black { /* Information text used in buttons*/
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+.playing { /* when a track in playlist is in playing mode */
+  border: 1px solid var(--player-orange);
+  background-color: var(--player-dark);
+  margin: 0px;
+  padding: 0px;
+}
+.end-element { /* end of playlist or usb list */
+  background-color:transparent;
+  border: 0px;*/
+}
+.end-text {
+  color: rgba(55, 61, 69, 0.75);
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+/*animation: mymove 2s infinite; <===put this in CCS*/
+/*@keyframes mymove {
+  from {background-color: var(--player-grey);}
+  to {background-color: var(--player-dark);}
+}*/
+
+.list-btn { /*general button functionality for text list items */
+  background-color: transparent;
+  border: none;
+  cursor: pointer; /* Mouse pointer on hover */
+  padding-right: 0px;
+  color: var(--player-light-grey);
+  line-height: 110%;
+  text-align: left;
+}
+.list-row {/* rows for title, artist and album */
+  margin-right: 0px;
+}
+.title-icon, .artist-icon, .album-icon { /* align icon list element in lists*/
+  margin-left: 6px;
+  padding-top: 1px;
+}
+.title-icon {
+  padding-left: 6px;
+  padding-right: 8px;
+}
+.artist-icon {
+  padding-left: 6px;
+  padding-right: 4px;
+}
+.album-icon {
+  padding-right: 2px;
+  padding-left: 9px;
+}
+.list-element, .list-element-bottom {/* text element in list typical: track or artist */
+  margin-left: 0px;
+  padding-left: 4px;
+  margin-bottom: 0px;
+}
+.list-element-bottom {/* last text element, typical: album */
+  padding-bottom: 12px;
+}
+.list-remove-btn, .list-remove-phone-btn{
+  padding: 2px;
+}
+/*below not in use or useless ???*/
+.list-open-btn{
+  padding: 2px;
+}
+.player-headline, .playlist-symbol, .playlist-headline,
+.usblist-symbol, .usblist-headline, .settings-symbol {
+  color: var(--player-light-grey); /* general colouring */
+}
+/* Head symbol on list pages are red coloured */
+.usblist-symbol{
+  color: var(--player-red);
+}
+.playlist-symbol {
+  color: var(--player-red);
+}
+.settings-symbol {
+  color: var(--player-red);
+}
+/* Frames important items in orange */
+.playlist-header-border, .usblist-header-border {
+  border-bottom: 2px solid var(--player-light-grey);
+}
+.scan-border {/* inner borders for scan results in modal body */
+  border-bottom: 2px solid var(--player-orange);
+}
+.scan-border-top {/* inner borders for scan results in modal footer */
+  border-top: 2px solid var(--player-orange);
+}
+.playlist-border, .folder-border  { /* header border for top part of page */
+  border: 1px solid var(--player-orange);
+}
+.scan-outer-border  { /* outer border for scan results */
+  border: 2px solid var(--player-orange);
+}
+.bottom-btn{
+  display: flex; justify-content: center;
+}
+.clear-playlist-btn, .connect-wifi-btn, .set-volume-btn, .usb-root-btn,
+.reconnect-spkr-btn  {
+  background-color: var(--player-orange); /* classic general button colour */
+}
+.clear-playlist-btn:active, .connect-wifi-btn:active, .set-volume-btn:active,
+.usb-root-btn:active, .reconnect-spkr-btn:active { /* classic general button behaviour */
+  background-color: var(--player-light-grey);
+  -webkit-box-shadow: 2px 2px 0px 0px var(--player-grey); /* Safari */
+  box-shadow: 2px 2px 0px 0px var(--player-grey);
+  opacity: 0.4;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: none;
+}
+/* Styling specifically for Settings */
+.settings-border{ /* Frames messages, infomtaion text - grey */
+  border-top: 1px solid var(--player-light-grey);
+  border-left: 1px solid var(--player-light-grey);
+  border-right: 1px solid var(--player-light-grey);
+}
+.wifi-symbol, .nowifi, .nohotspot {
+  font-size: 160%; /* the wi-fi symbol must be scaled */
+}
+.end-border{
+  border-bottom: 1px solid var(--player-light-grey);
+}
+
+/*----------------------------------------------------------*/
+/* CSS pseudo-element styling ------------------------------*/
+/* general reset/setup styling for icons - needed on all----*/
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+/* specific icon styling below*/
+.remove::before {
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f057";
+    font-size: 2em;
+    color: var(--player-orange);
+    padding-right: 3px;
+  }
+.open-folder::before {
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f07c";
+    font-size: 2em;
+    color: var(--player-orange);
+    padding-right: 3px;
+  }
+.folder::before {
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f07b";
+    font-size: 2em;
+    color: var(--player-orange);
+    padding-right: 3px;
+  }
+.play::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f04b";
+  font-size: 2em;
+  color: var(--player-orange);
+  padding-right: 3px;
+}
+.folder-open::before {
+  /*font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0dd";*/
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f07b";
+  color: var(--player-dark-text);
+  padding-right: 3px;
+}
+.folder-up::before {
+  /*font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0de";*/
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f07c";
+  color: var(--player-dark-text);
+  padding-right: 3px;
+}
+.track::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f001";
+
+  color: var(--player-dark-text);
+  /*padding-right: 4px;*/
+}
+.artist::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0c0";
+
+  color: var(--player-dark-text);
+/*  padding-right: 3px; */
+}
+.album::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f8d9";
+  color: var(--player-dark-text);
+  padding-right: 3px;
+/*   padding-left: 3px; */
+}
+
+/* EX defining the right unicode values for each icon */
+.icon-award::before {
+  content: "\f559";
+}
+
+.icon-adobe::before {
+  content: "\f778";
+}

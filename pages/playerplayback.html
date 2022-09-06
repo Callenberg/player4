@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- *********************************************************************** -->
+<!-- Copyright 2022 by Retro Audiophile Designs GNU General Public License v3.0 -->
+<!-- *********************************************************************** -->
+<head>
+  <title>Player USB Playback</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="application-name" content="player">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-startup-image" href="/apple-touch-icon.png">
+  <!--Versions: Bootstrap 4.3.1; nouislider - 14.1.1; Fontawesome 5.12.0 -->
+<link href="bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="nouislider.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="notyf.min.css">
+<link href="all.min.css" type="text/css" rel="stylesheet">
+<link href="player.css" type="text/css" rel="stylesheet">
+
+</head>
+<body class="bg">
+  <!-- player grid starts ===================================================-->
+<div class="container center-container bg-inner pt-1">
+<!-- player header, header row - only shown on wide screens -->
+<div class="row">
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4">
+        <h3 class="player-headline ">USB Playback </h3>
+      </div>
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+  </div>
+  <!-- main row with responsive columns to the left/right -->
+  <div class="row">
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div>
+    <!-- centre column of USB player -->
+    <div class="col">
+<!-- album art card with track information===================================-->
+      <div id="track-card-disconnected" class="card bg-dark text-dark border border-secondary " style="display: none;">
+        <a href="player.html" title="Update USB Playback Page" >
+        <img class="card-img-top rounded" alt="Album Art" src="disconnected.png" />
+      </a>
+        <div class="card-body p-0 m-0">
+          <p  class="text-muted px-2 m-0">ERROR: disconnected from Player!</p>
+          <div class="row p-0 m-0">
+            <div class="col d-flex justify-content-start ">
+              <p class="time-text text-muted px-2 m-0"> XX:XX  </p>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <p class="time-text text-muted px-2 m-0"> XX:XX  </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="track-card" class="card bg-dark text-dark border border-secondary ">
+        <a href="playerplayback.html" title="Update USB Playback Page" >
+        <img id="albumart" class="card-img-top rounded" alt="Album Art" src="albumart_missing.png" />
+      </a>
+        <div class="card-body p-0 m-0">
+          <p id="track-text" class="text-muted px-2 m-0">.</p>
+          <div class="row p-0 m-0">
+            <div class="col d-flex justify-content-start ">
+              <p id="elapsed" class="time-text text-muted px-2 m-0"> 00:00  </p>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <p id="duration" class="time-text text-muted px-2 m-0"> 00:00  </p>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- duration slider ========================================================-->
+      <div class="py-3">
+        <div id="duration-slider" title="Elapsed">
+        </div>
+      </div>
+<!-- playback control buttons ===============================================-->
+      <div class="d-flex justify-content-center">
+        <div class="col text-center align-self-center mr-4">
+          <button class="playback-btn" type="button" title="Previous">
+          <i id="previous" class="rev-btn fas fa-step-backward fa-2x" ></i>
+          </button>
+        </div>
+        <div class="col text-center align-self-center">
+          <button class="playback-btn" type="button">
+            <i  id="play-or-pause" class="play-pause-btn fas fa-play fa-3x" title="Play"></i>
+          </button>
+        </div>
+        <div class="col text-center align-self-center ml-4">
+          <button class="playback-btn" type="button" title="Next">
+            <i id="next" class="fwd-btn fas fa-step-forward fa-2x" ></i>
+          </button>
+        </div>
+      </div>
+<!-- playback state buttons =================================================-->
+      <div class="d-flex justify-content-center mt-n2">
+        <div class="col state-btn text-center mr-n4">
+          <button class="playback-btn" type="button">
+            <i id="repeater" class="repeat-btn fas fa-sync-alt fa-2x" title="Repeat"></i>
+          </button>
+        </div>
+        <div class="col state-btn text-center ml-n4">
+          <button class="playback-btn" type="button">
+            <i id="shuffler" class="shuffle-btn fas fa-random fa-2x" title="No shuffle"></i>
+          </button>
+        </div>
+      </div>
+<!-- volume symbols =========================================================-->
+      <div class="d-flex justify-content-center">
+        <div class="col d-flex justify-content-start ml-n3">
+          <i id="vol-down-symbol" class="vol-down fas fa-volume-down fa-1x"></i>
+        </div>
+        <div class="col d-flex justify-content-end mr-n3">
+          <i id="vol-up-symbol" class="vol-up fas fa-volume-up fa-1x"></i>
+        </div>
+      </div>
+<!-- volume slider ==========================================================-->
+      <div class="pt-1 pb-3">
+        <div id="volume-slider" title="Volume">
+        </div>
+      </div>
+<!-- navbar with buttons to USB, playlist and settings ======================-->
+        <ol id="nav-bar" class="nav nav-justified bg-dark pb-1">
+            <!-- USB-->
+            <li class="nav-item border border-secondary">
+              <a class="nav-link" href="playerusb.html">
+                <i class="usb-btn fab fa-usb fa-2x" title="USB Content"></i>
+              </a>
+            </li>
+            <!-- playlist -->
+            <li class="nav-item border border-secondary mx-1">
+              <a class="nav-link" href="playerplaylist.html">
+                <i class="playlist-btn fas fa-th-list fa-2x" title="Playlist"></i>
+              </a>
+            </li>
+            <!-- back to Player page -->
+            <li class="nav-item border border-secondary">
+              <a class="nav-link" href="player.html">
+                <i class="home-btn fas fa-home fa-2x" title="Player Start Page"></i>
+              </a>
+            </li>
+        </ol>
+    </div> <!-- ends the main centre column -->
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div> <!-- end right side responsive column of main row -->
+  </div> <!-- ends the main row =============================================-->
+</div> <!-- player grid ends,  ends container -->
+<!-- load the Javascripts -->
+   <script  src="jquery-3.3.1.slim.min.js"></script>
+   <script  src="socket.io.js"></script>
+   <script  src="popper.min.js"></script>
+   <script src="notyf.min.js"></script>
+   <script  src="bootstrap.min.js"></script>
+   <script  src="nouislider.min.js"></script>
+   <script  src="playerplayback.js"></script>
+</body>
+</html>

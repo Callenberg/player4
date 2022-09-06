@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- *********************************************************************** -->
+<!-- Copyright 2022 by Retro Audiophile Designs GNU General Public License v3.0 -->
+<!-- *********************************************************************** -->
+<head>
+  <title>Player Wi-Fi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+  <meta name="apple-mobile-web-app-title" content="player">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+ <meta name="application-name" content="player">
+ <meta name="msapplication-TileColor" content="#da532c">
+ <meta name="theme-color" content="#ffffff">
+  <!--Versions: Bootstrap 4.3.1; Fontawesome 5.12.0 -->
+<link href="bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="all.min.css" type="text/css" rel="stylesheet"> <!--load all fontawesome fonts and styles -->
+<link rel="stylesheet" href="notyf.min.css">
+<link href="player.css" type="text/css" rel="stylesheet">
+</head>
+<body class="bg">
+<!-- Container; holds playlist grid (3 columns & 2 fixed rows); -->
+<div class="container bg-darker-inner pt-2 vh-100"> <!-- vh-100 viewport height 100%-->
+<!-- Header part uses most of the stylings of the usb-list page-->
+<header>
+  <div class="row mb-1">
+    <!-- responsive column left -->
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div>
+      <div class="col usblist-header-border pl-1 py-1">
+        <a  href="playerwifi.html" title="Update Wi-Fi Page">
+        <i class="settings-symbol fas fa-wifi fa-3x"></i>
+      </a>
+      </div>
+      <div class="col usblist-header-border text-center usblist-headline pt-2">
+        <h3><strong>Wi-Fi</strong></h3>
+      </div>
+      <div class="col usblist-header-border d-flex justify-content-end align-top pt-1 pr-2">
+        <button class="playback-btn" type="button" onclick="window.location.href = 'player.html';">
+          <i class="home-btn fas fa-home fa-2x" href="playerplayback.html" title="Player Page"></i>
+        </button>
+      </div>
+      <!-- responsive column right -->
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+  </div>
+</header>
+    <!-- Wi-Fi Connections =======================================    -->
+    <div class="row">
+      <!-- Responsive column left -->
+      <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+      </div>
+      <!-- Center column for connections -->
+      <div class="col">
+        <!-- Fixed: connection help text -->
+        <div id="connection-text" class="col settings-border bg-darkest-inner mx-0">
+          <p class="settings-text m-0">The Player can be connected to:</p>
+            <p class="settings-text-small m-0 pb-2"> &nbsp; 1. a Wi-Fi network, <br>
+              &nbsp; &nbsp; or instead you connect your devices to<br>
+              &nbsp; 2. Player's own Wi-Fi hotspot<br>
+              &nbsp; In addition, it can also be connected to: <br>
+              &nbsp; 3. a LAN network using an Ethernet cable</p>
+        </div>
+          <ul id="connection-list" class="list-group no-bullet">
+
+            <!-- content injected here by playerwifi.js, might be empty -->
+
+          </ul>
+      <!-- fixed; volume setting at start-up -->
+
+      <!-- fixed; restart options -->
+
+  </div>  <!-- Ends center Col element-->
+    <!-- Responsive column right -->
+    <div class="col-auto d-none d-sm-block col-sm-2 col-md-3 col-lg-4 my-auto">
+    </div>
+
+  </div>  <!-- Ends Row element-->
+  <!-- fixed bottom nav bar - this is outside of row element -->
+      <div id ="nav-bar" class="bottom-btn fixed-bottom pb-1">
+        <ol class="nav nav-justified bg-dark  ">
+          <!-- Wi-Fi -->
+          <li class="nav-item border border-secondary px-2 py-1 mr-1">
+              <a class="nav-link" href="playerbluetooth.html">
+                  <i class="usb-btn fab fa-bluetooth-b fa-2x" title="Bluetooth"></i>
+                  </a>
+          </li>
+          <!-- USB playback -->
+          <li class="nav-item border border-secondary p-1 mx-1">
+              <a class="nav-link" href="playerplayback.html">
+                  <i class="usb-btn fab fa-usb fa-2x" title="USB Playback"></i>
+                  </a>
+          </li>
+          <!-- Settings -->
+          <li class="nav-item border border-secondary p-1 ml-1">
+            <a class="nav-link" href="playersettings.html">
+              <i class="home-btn fas fa-cog fa-2x" title="Settings"></i>
+            </a>
+          </li>
+        </ol>
+      </div> <!-- ends fixed bottom nav bar -->
+  <!-- 1st Modal for wifi networks scan findings - this is outside of row element-->
+  <div id="wifiModal" class="modal fade"
+                  tabindex="-1" aria-labelledby="wifiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content scan-outer-border bg-darker-inner">
+        <div class="modal-header scan-border">
+          <i class="player-headline nowifi fas fa-wifi fa-2x pr-2"></i>
+          <p class="modal-title player-headline mt-1" id="wifiModalLabel">
+            <strong> Available Wi-Fi Networks: </strong>
+          </p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="wifi-available" class="modal-body">
+          No WiFi Networks were found . . .
+        </div>
+        <div class="modal-footer scan-border-top">
+          <button type="button" class="btn btn-secondary scan-btn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary scan-btn bg-orange" onclick="scanWifiClicked()">
+            Scan again</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Ends 1st Modal element-->
+  <!-- 2nd Modal for the selected wifi ssid - this is outside of row element-->
+  <div id="wifiConnectModal" class="modal fade"
+                  tabindex="-1" aria-labelledby="wifiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content scan-outer-border bg-darker-inner">
+        <div class="modal-header scan-border">
+          <i class="player-headline nowifi fas fa-wifi fa-2x pr-2"></i>
+          <p class="modal-title player-headline mt-1" id="wifiModalLabel">
+            <strong> Connect to Wi-Fi: </strong>
+          </p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="wifi-selected" class="modal-body">
+          No Wi-Fi Network was selected, scan again.
+        </div>
+        <div class="modal-footer scan-border-top">
+          <button type="button" class="btn btn-secondary scan-btn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary scan-btn bg-orange" onclick="scanWifiClicked()">
+            Scan again</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Ends 2nd Modal element-->
+
+</div>    <!-- Ends Container element-->
+
+<!-- load the Javascripts -->
+   <script type="text/javascript" src="jquery-3.3.1.slim.min.js"></script>
+   <script type="text/javascript" src="popper.min.js"></script>
+   <script src="socket.io.js"></script>
+   <script src="notyf.min.js"></script>
+   <script type="text/javascript" src="bootstrap.min.js"></script>
+   <script type="text/javascript" src="playerwifi.js"></script>
+
+</body>
+</html>
