@@ -46,7 +46,9 @@ Topics that might be of interest
 ================================
 Bluetooth - Connecting a device via Bluetooth is mainly managed in the file /lib/machine-bluetooth.js (Case: audio sink). If you are curious how the connection to a bluetooth speaker is made check out /lib/machine-audiosink.js (Case: audio source). It might also be of interest to check out status and any information about current connections as well as starting and stoping the Bluetooth service, then look at the file /lib/machine-network.js (Case: status of the Bluetooth connection).
 
-Configuration - Various config files can be found in /config/.  Coming soon...
+Configuration - Various config files can be found in /config/.  However, the config files for Wi-Fi can be found in /data/.   More coming soon...
 
-Wi-Fi - [player/lib] In order to manage all aspects of Wi-Fi calls to the WPA command line client are used and also the management of the wpa_supplicant service. Open the file /lib/machine-network.
+mpd - mpd and its client mpc are the backbone software used to play/stream music files (note: only files, not Spotify streams or any audio streams). The use of mpc is prefered over mpd calls. Look at /lib/machine-mpd.js. The actual Javascript client for mpd can be found in /lib/mpd.js (based on Andrew Kelley's work - https://github.com/andrewrk/mpd.js )
+
+Wi-Fi - In order to manage all aspects of Wi-Fi calls to the WPA command line client are used and also the management of the wpa_supplicant service. Open the file /lib/machine-network.
 
