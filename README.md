@@ -36,8 +36,6 @@ Node.js https://nodejs.org/en/download/
 
 socket.io https://socket.io/
 
-Font Awesome https://fontawesome.com/
 
-Bootstrap  https://getbootstrap.com/
 
 
