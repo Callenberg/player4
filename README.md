@@ -1,5 +1,5 @@
 # player4
-Player Software Version 4
+Player Software Version 4 --- backend and frontend for a Raspberry Pi based music network player
 
 This is the software that comes with the network music players/streamers sold by Retro Audiophile Designs. The products are old vintage radios or sometimes cassette decks where new electronics have been retrofitted. To learn more about the products visit our web site: www.retroaudiophiledesigns.com
 
