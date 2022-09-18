@@ -44,7 +44,7 @@ This is only a plain software depository. There is no package to install. The be
 
 Topics that might be of interest
 ================================
-Bluetooth - Connecting a device via Bluetooth is mainly managed in the file /lib/machine-bluetooth.js (Case: audio sink). If you are curious how the connection to a bluetooth speaker is made check out /lib/machine-audiosink.js (Case: audio source). It might also be of interest to check out status and any information about current connections as well start and stop the Bluetooth service, then look at the file /lib/machine-network.js (Case: status of the Bluetooth connection).
+Bluetooth - Connecting a device via Bluetooth is mainly managed in the file /lib/machine-bluetooth.js (Case: audio sink). If you are curious how the connection to a bluetooth speaker is made check out /lib/machine-audiosink.js (Case: audio source). It might also be of interest to check out status and any information about current connections as well as starting and stoping the Bluetooth service, then look at the file /lib/machine-network.js (Case: status of the Bluetooth connection).
 
 Configuration - Various config files can be found in /config/.  Coming soon...
 
