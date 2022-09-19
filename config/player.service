@@ -1,0 +1,13 @@
+[Unit]
+Description = Player machine
+After=network-online.target
+
+[Service]
+ExecStart=/bin/bash /player/player.sh
+StandardOutput=syslog
+StandardError=syslog
+User=root
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
