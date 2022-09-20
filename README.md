@@ -44,7 +44,9 @@ This is only a plain software depository. There is no package to install. The be
 
 Topics that might be of interest
 ================================
-Bluetooth connections - Connecting a device via Bluetooth is mainly managed in the file /lib/machine-bluetooth.js (Case: audio sink). If you are curious how the connection to a bluetooth speaker is made check out /lib/machine-audiosink.js (Case: audio source). It might also be of interest to check out status and any information about current connections as well as starting and stoping the Bluetooth service, then look at the file /lib/machine-network.js (Case: status of the Bluetooth connection).
+Bluetooth connections
+---------------------
+- Connecting a device via Bluetooth is mainly managed in the file /lib/machine-bluetooth.js (Case: audio sink). If you are curious how the connection to a bluetooth speaker is made check out /lib/machine-audiosink.js (Case: audio source). It might also be of interest to check out status and any information about current connections as well as starting and stoping the Bluetooth service, then look at the file /lib/machine-network.js (Case: status of the Bluetooth connection).
 
 Bluetooth streaming - One challenge is how to detect when Bluetooth is used to stream audio to the Player and to a Bluetooth speaker. Since the alsa and the audio card is not used in this case so no need to monitor those things. Instead file descriptors are scanned to find the open file that represents the bluetooth streaming. Look further in the script fdinfobluealsa.sh that writes to the file bluetoothdetect.log that has to be present in the /var/log/ directory of the Raspberry Pi. An example of the file can be found in /data/. The streaming is detected in the file /lib/machine-loop.js.
 
