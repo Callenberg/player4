@@ -20,7 +20,7 @@ Class D amplifier IQaudio Pi-DigiAMP+ HAT for Raspberry pi (other HATs works too
 Software requirements:
 =====================
 
-Raspberry Pi OS based on Debian Bullseye https://www.raspberrypi.com/documentation/computers/os.html
+ - Raspberry Pi OS based on Debian Bullseye https://www.raspberrypi.com/documentation/computers/os.html
 
 librespot https://github.com/librespot-org/librespot
 
