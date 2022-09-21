@@ -22,21 +22,21 @@ Software requirements:
 
  - Raspberry Pi OS based on Debian Bullseye https://www.raspberrypi.com/documentation/computers/os.html
 
-librespot https://github.com/librespot-org/librespot
+- librespot https://github.com/librespot-org/librespot
 
-Shairport Sync https://github.com/mikebrady/shairport-sync
+- Shairport Sync https://github.com/mikebrady/shairport-sync
 
-Bluetooth Audio ALSA Backend https://github.com/Arkq/bluez-alsa
+- Bluetooth Audio ALSA Backend https://github.com/Arkq/bluez-alsa
 
-Music Player Daemon https://github.com/MusicPlayerDaemon/MPD
+- Music Player Daemon https://github.com/MusicPlayerDaemon/MPD
 
-upmpdcli https://www.lesbonscomptes.com/upmpdcli/
+- upmpdcli https://www.lesbonscomptes.com/upmpdcli/
 
-Node.js https://nodejs.org/en/download/
+- Node.js https://nodejs.org/en/download/
 
-socket.io https://socket.io/
+- socket.io https://socket.io/
 
-Express https://expressjs.com/
+- Express https://expressjs.com/
 
 Usage
 =====
